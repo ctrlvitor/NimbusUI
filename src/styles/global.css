@@ -1,0 +1,137 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: #101010;
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+  transition: background-color 0.4s, color 0.4s;
+  color-scheme: light dark;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+img {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+@keyframes neonGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 2px rgba(255,179,0,0.5)) drop-shadow(0 0 4px rgba(255,69,0,0.4)) drop-shadow(0 0 6px rgba(255,140,0,0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 3px rgba(255,179,0,0.6)) drop-shadow(0 0 5px rgba(255,69,0,0.5)) drop-shadow(0 0 7px rgba(255,140,0,0.6));
+  }
+}
+
+.animate-neonGlow {
+  animation: neonGlow 3.5s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
+}
+
+
+html.dark {
+  @apply bg-zinc-950 text-white;
+}
+
+body {
+  @apply font-[Raleway] transition-colors duration-300;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Scrollbar para navegadores WebKit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111; /* trilha escura */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #444, #222); /* efeito moderno */
+  border-radius: 10px;
+  border: 2px solid #111; /* espaço entre thumb e track */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #555, #333);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #444 #111;
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow: auto; /* ainda permite rolagem */
+    -ms-overflow-style: none;  /* IE e Edge antigos */
+    scrollbar-width: none;     /* Firefox */
+  }
+
+  body::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari, Edge (novos) */
+    width: 0;
+    height: 0;
+  }
+}
+
+@font-face {
+  font-family: "Caveat";
+  src: url("/fonts/Caveat/Caveat-VariableFont_wght.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Playwrite";
+  src: url("/fonts/Playwrite_AU_SA/PlaywriteAUSA-VariableFont_wght.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Quintessential";
+  src: url("/fonts/Quintessential/Quintessential-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("/fonts/Raleway/Raleway-VariableFont_wght.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Special_Gothic";
+  src: url("/fonts/Special_Gothic/SpecialGothicExpandedOne-Regular.ttf") format("truetype");
+  font-display: swap;
+}
