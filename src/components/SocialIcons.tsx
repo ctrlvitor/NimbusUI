@@ -3,11 +3,11 @@ import { FaGithub, FaGlobe } from "react-icons/fa";
 const socials = [
   {
     icon: <FaGithub />,
-    url: "https://github.com/ctrlvitor",
+    url: "https://github.com/ctrlvitor/NimbusUI",
   },
   {
     icon: <FaGlobe />,
-    url: "",
+    url: "https://ctrlvitor.vercel.app/",
   },
 ];
 
